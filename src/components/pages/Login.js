@@ -42,9 +42,18 @@ function Login() {
     <AuthPageContainer>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Stack spacing={4}>
-          <Heading fontSize='1.5rem' textAlign='center'>
-            Connexion
-          </Heading>
+          <Stack>
+            <Heading fontSize='1.5rem' textAlign='center'>
+              Connexion
+            </Heading>
+            <Stack direction='row' alignItems='center'>
+              <Divider />
+              <Text color='gray.500' fontWeight='500' fontSize='1.15rem' textAlign='center'>
+                Etablissement
+              </Text>
+              <Divider />
+            </Stack>
+          </Stack>
 
           <FormControl mt={4} isInvalid={errors.email}>
             <FormLabel htmlFor='email' color='gray.500'>

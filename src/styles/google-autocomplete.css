@@ -1,0 +1,30 @@
+.pac-container {
+  z-index: 2000;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  margin-top: .5rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.pac-container .pac-item:first-child {
+  border: none !important;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item {
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.pac-item:hover {
+  background-color: #ececec;
+}
+
+.pac-item-query {
+  font-size: 15px;
+}

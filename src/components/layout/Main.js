@@ -6,11 +6,17 @@ import { privateRoutes } from '../../routes';
 
 import Sidebar from './Sidebar';
 import Section from './Section';
+import Breadcrumb from './Breadcrumb';
 import PrivateRoute from '../helpers/PrivateRoute';
 
 function displayPrivateRoutes() {
   return privateRoutes.map((privateRoute) => (
-    <PrivateRoute key={privateRoute.key} path={privateRoute.path} component={privateRoute.component} />
+    <PrivateRoute
+      exact={!!privateRoute.exactPath}
+      key={privateRoute.key}
+      path={privateRoute.path}
+      component={privateRoute.component}
+    />
   ));
 }
 
@@ -21,6 +27,7 @@ function Main() {
         <Sidebar />
 
         <Section>
+          <Breadcrumb />
           <Switch>
             <Route exact path='/' render={() => <Redirect to='/home' />} />
             {displayPrivateRoutes()}

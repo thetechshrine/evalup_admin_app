@@ -7,15 +7,17 @@ import { privateRoutes } from '../../routes';
 import SidebarMenu from './sidebar_menu/SidebarMenu';
 
 function displaySidebarMenu() {
-  return privateRoutes.map((privateRoute) => (
-    <SidebarMenu.Item
-      key={privateRoute.key}
-      icon={privateRoute.icon}
-      title={privateRoute.title}
-      url={privateRoute.path}
-      active={window.location.pathname === privateRoute.path}
-    />
-  ));
+  return privateRoutes
+    .filter((privateRoute) => privateRoute.sidebarMenu)
+    .map((privateRoute) => (
+      <SidebarMenu.Item
+        key={privateRoute.key}
+        icon={privateRoute.icon}
+        title={privateRoute.title}
+        url={privateRoute.path}
+        active={window.location.pathname === privateRoute.path}
+      />
+    ));
 }
 
 function Sidebar() {

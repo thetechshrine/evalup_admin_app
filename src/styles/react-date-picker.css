@@ -1,0 +1,111 @@
+abbr[title] {
+  border-bottom: none !important;
+  cursor: inherit !important;
+  text-decoration: none !important;
+}
+
+.date-time-picker-calendar {
+  border: none !important;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+}
+
+.react-date-picker {
+  width: 100% !important;
+  cursor: text;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day {
+  border-radius: 5px !important;
+}
+
+.react-calendar__tile.react-calendar__month-view__days__day.react-calendar__tile--active {
+  font-weight: 600;
+}
+
+.react-date-picker__wrapper {
+  border: none !important;
+  width: 100% !important;
+}
+
+.react-calendar__navigation__label {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  font-weight: 500 !important;
+}
+
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.react-date-picker__inputGroup {
+  display: flex;
+}
+
+.react-date-picker__inputGroup__divider {
+  margin-right: 0rem;
+}
+
+.react-date-picker__inputGroup>.react-date-picker__inputGroup__input.react-date-picker__inputGroup__day {
+  width: auto !important;
+  min-width: 0.6rem !important;
+  max-width: 1.2rem !important;
+  text-align: center;
+}
+
+.react-date-picker__inputGroup>.react-date-picker__inputGroup__input.react-date-picker__inputGroup__month {
+  min-width: 0.6rem !important;
+  max-width: 1.2rem !important;
+  text-align: center;
+}
+
+.react-date-picker__inputGroup>.react-date-picker__inputGroup__input.react-date-picker__inputGroup__year {
+  width: 2.4rem !important;
+}
+
+.react-date-picker__inputGroup>input {
+  border: 1px solid transparent;
+  transition: all 200ms ease;
+}
+
+.react-date-picker__inputGroup>input:focus {
+  outline: none;
+  border: 1px solid #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+  border-radius: 5px;
+  padding: 0 .25rem;
+}
+
+.react-datetime-picker {
+  width: 100% !important;
+  cursor: text;
+}
+
+.react-datetime-picker>.react-datetime-picker__wrapper {
+  border: none !important;
+  width: 100% !important;
+}
+
+.react-datetime-picker__clock {
+  border: none !important;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+}
+
+.react-datetime-picker .react-datetime-picker__inputGroup>input {
+  border: 1px solid transparent;
+  transition: all 200ms ease;
+}
+
+.react-datetime-picker .react-datetime-picker__inputGroup>input:focus {
+  outline: none;
+  border: 1px solid #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+  border-radius: 5px;
+  padding: 0 .25rem;
+}

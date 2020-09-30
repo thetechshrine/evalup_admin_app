@@ -6,12 +6,14 @@ const httpClient = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL
 });
 const contentTypes = Object.freeze({
-  JSON: 'application/json'
+  JSON: 'application/json',
+  FORM_DATA: ''
 });
 
 function getHeaders(contentType = contentTypes.JSON) {
-  const headers = { 'Content-Type': contentType };
+  const headers = {};
   if (storage.getToken()) headers['Authorization'] = `Bearer ${storage.getToken()}`;
+  if (contentType === contentTypes.JSON) headers['Content-Type'] = contentType;
 
   return headers;
 }

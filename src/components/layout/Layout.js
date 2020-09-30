@@ -8,6 +8,7 @@ import storage from '../../utils/storage';
 import Navbar from './Navbar';
 import Main from './Main';
 import ConfirmationDialog from '../helpers/dialogs/ConfirmationDialog';
+import Loading from '../helpers/Loading';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function Layout() {
       <Main />
 
       <ConfirmationDialog />
+      <Loading />
     </Flex>
   );
 }

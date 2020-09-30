@@ -22,7 +22,7 @@ function Navbar() {
       dialogsActions.showConfirmationDialog({
         title: 'Déconnexion ?',
         message:
-          'En vous déconnectant, toutes vos actions en cours seront annulées et aucune sauvegarde ne sera effectuée. Fermer bien toutes vos tâches.',
+          'En vous déconnectant, toutes vos actions en cours seront annulées et aucune sauvegarde ne sera effectuée.',
         onConfirm: function () {
           dispatch(authActions.logout({ history }));
         }
@@ -42,14 +42,14 @@ function Navbar() {
       <Flex height='100%' padding='0 2rem' justifyContent='space-between' alignItems='center'>
         <Logo />
 
-        <Menu>
+        <Menu placement='bottom-end'>
           <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
             <Stack direction='row' spacing={2} alignItems='center'>
-              <Avatar size='sm' rounded='full' src='https://placekitten.com/100/100' alt='Fluffybuns the destroyer' />
-              <Text>User</Text>
+              <Avatar size='sm' rounded='full' src='https://bit.ly/broken-link' alt='Fluffybuns the destroyer' />
+              <Text>Admin</Text>
             </Stack>
           </MenuButton>
-          <MenuList placement='bottom-end'>
+          <MenuList>
             <MenuGroup title='Profil'>
               <NavbarAction icon={MdAccountCircle} title='Mon compte' />
               <NavbarAction icon={BiLogOut} title='Déconnexion' onClick={handleLogout} />
