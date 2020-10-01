@@ -50,7 +50,7 @@ function Students() {
     <>
       <Block>
         <Block.Header title='Etudiants' openDrawerLabel='Créer' onOpenDrawer={open} />
-        <Block.Main loading={!!loading} dataLength={students.length} emptyDataMessage='Aucun étudiant enregistré'>
+        <Block.Main loading={loading} dataLength={students.length} emptyDataMessage='Aucun étudiant enregistré'>
           {displayStudents(students)}
         </Block.Main>
       </Block>

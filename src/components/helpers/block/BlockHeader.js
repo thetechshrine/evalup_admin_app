@@ -6,6 +6,7 @@ import GroupSelector from '../../core/groups/GroupSelector';
 
 function BlockHeader({
   title,
+  showActionButton = true,
   showGroupSelector = false,
   onGroupChange,
   includeGroupSelectorFirstEmptyItem,
@@ -20,9 +21,11 @@ function BlockHeader({
           <GroupSelector onGroupChange={onGroupChange} includeEmptyFirstItem={includeGroupSelectorFirstEmptyItem} />
         )}
 
-        <Button variant='outline' colorScheme='purple' size='lg' onClick={onOpenDrawer}>
-          {openDrawerLabel}
-        </Button>
+        {showActionButton && (
+          <Button variant='outline' colorScheme='purple' size='lg' onClick={onOpenDrawer}>
+            {openDrawerLabel}
+          </Button>
+        )}
       </Stack>
     </Flex>
   );
@@ -34,7 +37,8 @@ BlockHeader.propTypes = {
   onOpenDrawer: PropTypes.func.isRequired,
   showGroupSelector: PropTypes.bool,
   onGroupChange: PropTypes.func,
-  includeGroupSelectorFirstEmptyItem: PropTypes.bool
+  includeGroupSelectorFirstEmptyItem: PropTypes.bool,
+  showActionButton: PropTypes.bool
 };
 
 export default BlockHeader;

@@ -5,7 +5,6 @@ import { Icons } from './components/layout/sidebar_menu/SidebarMenu';
 
 const Layout = loadable(() => import('./components/layout/Layout'));
 const Login = loadable(() => import('./components/pages/Login'));
-const AccountValidation = loadable(() => import('./components/pages/AccountValidation'));
 const Home = loadable(() => import('./components/pages/Home'));
 const Groups = loadable(() => import('./components/pages/Groups'));
 const Courses = loadable(() => import('./components/pages/Courses'));
@@ -14,11 +13,9 @@ const Teachers = loadable(() => import('./components/pages/Teachers'));
 const Assessments = loadable(() => import('./components/pages/Assessments'));
 const NewAssessment = loadable(() => import('./components/pages/NewAssessment'));
 const AssessmentResults = loadable(() => import('./components/pages/AssessmentResults'));
-const AssessmentResultDetails = loadable(() => import('./components/pages/AssessmentResultDetails'));
 
 export const publicRoutes = [
   { key: uuid(), path: '/login', component: Login },
-  { key: uuid(), path: '/account-validation', component: AccountValidation },
   { key: uuid(), path: '/', component: Layout }
 ];
 
@@ -45,10 +42,5 @@ export const privateRoutes = [
     exactPath: true
   },
   { key: uuid(), path: '/assessments/new', component: NewAssessment },
-  { key: uuid(), path: '/assessments/:assessmentId/assessment-results', component: AssessmentResults },
-  {
-    key: uuid(),
-    path: '/assessments/:assessmentId/assessment-results/:assessmentResultId',
-    component: AssessmentResultDetails
-  }
+  { key: uuid(), path: '/assessments/:assessmentId', component: AssessmentResults }
 ];

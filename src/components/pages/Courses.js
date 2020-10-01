@@ -67,7 +67,7 @@ function Courses() {
           onGroupChange={handleGroupChange}
         />
         {selectedGroup && (
-          <Block.Main loading={!!loading} dataLength={courses.length} emptyDataMessage='Aucun cours enregistré'>
+          <Block.Main loading={loading} dataLength={courses.length} emptyDataMessage='Aucun cours enregistré'>
             {displayCourses(courses)}
           </Block.Main>
         )}

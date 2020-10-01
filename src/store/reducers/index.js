@@ -8,6 +8,7 @@ import coursesReducer from './courses';
 import studentsReducer from './students';
 import teachersReducer from './teachers';
 import assessmentsReducer from './assessments';
+import assessmentResultsReducer from './assessment-results';
 
 export default combineReducers({
   ui: combineReducers({
@@ -19,5 +20,6 @@ export default combineReducers({
   courses: coursesReducer,
   students: studentsReducer,
   teachers: teachersReducer,
-  assessments: assessmentsReducer
+  assessments: assessmentsReducer,
+  assessmentResults: assessmentResultsReducer
 });

@@ -48,7 +48,7 @@ function Teachers() {
     <>
       <Block>
         <Block.Header title='Enseignants' openDrawerLabel='Créer' onOpenDrawer={open} />
-        <Block.Main loading={!!loading} dataLength={teachers.length} emptyDataMessage='Aucun enseignant enregistré'>
+        <Block.Main loading={loading} dataLength={teachers.length} emptyDataMessage='Aucun enseignant enregistré'>
           {displayTeachers(teachers)}
         </Block.Main>
       </Block>

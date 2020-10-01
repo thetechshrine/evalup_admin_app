@@ -45,11 +45,20 @@ function Assessments() {
     close();
   }
 
+  function handleOpenAssessmentResults({ assessmentId } = {}) {
+    history.push(`/assessments/${assessmentId}`);
+  }
+
   function displayAssessments() {
     return (
       <SimpleGrid spacing={10}>
         {assessments.map((assessment) => (
-          <Assessment key={assessment.id} assessment={assessment} onOpenSubject={handleOpenAssessemntSubject} />
+          <Assessment
+            key={assessment.id}
+            assessment={assessment}
+            onOpenSubject={handleOpenAssessemntSubject}
+            onOpenResults={handleOpenAssessmentResults}
+          />
         ))}
       </SimpleGrid>
     );
@@ -67,11 +76,7 @@ function Assessments() {
           includeGroupSelectorFirstEmptyItem
         />
 
-        <Block.Main
-          loading={!!loading}
-          dataLength={assessments.length}
-          emptyDataMessage='Aucune évaluation enregistrée'
-        >
+        <Block.Main loading={loading} dataLength={assessments.length} emptyDataMessage='Aucune évaluation enregistrée'>
           {displayAssessments(assessments)}
         </Block.Main>
       </Block>

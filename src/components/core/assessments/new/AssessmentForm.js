@@ -53,7 +53,7 @@ function AssessmentForm({ groupId, addAsset, removeAsset, onChange, onSave, onCa
           <FormLabel htmlFor='description' color='gray.500'>
             Notes complémentaires
           </FormLabel>
-          <Textarea type='text' id='description' name='description' onChange={onChange} />
+          <Textarea type='text' id='description' name='description' onChange={(evt) => onChange(evt.target)} />
         </FormControl>
         <Stack direction='row' justifyContent='flex-end' py={8}>
           <Button type='button' variant='outline' onClick={onCancel}>

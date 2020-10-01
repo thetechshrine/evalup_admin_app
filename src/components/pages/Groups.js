@@ -44,7 +44,7 @@ function Groups() {
     <>
       <Block>
         <Block.Header title='Classes' openDrawerLabel='Créer' onOpenDrawer={open} />
-        <Block.Main loading={!!loading} dataLength={groups.length} emptyDataMessage='Aucune classe enregistrée'>
+        <Block.Main loading={loading} dataLength={groups.length} emptyDataMessage='Aucune classe enregistrée'>
           {displayGroups()}
         </Block.Main>
       </Block>

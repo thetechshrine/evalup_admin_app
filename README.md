@@ -1,1 +1,1 @@
-# SAMAPP - Student APP
+## SAMAPP - Schools

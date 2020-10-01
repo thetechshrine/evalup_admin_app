@@ -85,3 +85,15 @@ export const assessmentPropType = PropTypes.shape({
   group: groupPropType,
   assets: assetsPropType
 });
+
+export const assessmentResultPropType = PropTypes.shape({
+  id: PropTypes.string,
+  type: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  createdAt: PropTypes.string,
+  obtainedNote: PropTypes.number,
+  obtainedCredits: PropTypes.number,
+  assesment: assessmentPropType,
+  assets: assetsPropType
+});

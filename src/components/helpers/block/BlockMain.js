@@ -5,7 +5,7 @@ import { GoInbox } from 'react-icons/go';
 
 import { childrenPropType } from '../../../utils/default-prop-types';
 
-function BlockMain({ loading = true, dataLength = 0, emptyDataMessage, children }) {
+function BlockMain({ loading, dataLength = 0, emptyDataMessage, children }) {
   return (
     <Box>
       {loading && <Skeleton height={100} />}

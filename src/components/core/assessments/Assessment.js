@@ -75,11 +75,13 @@ function getTypeBadgeLabel(assessment) {
   return 'Rattrapage';
 }
 
-function Assessment({ assessment, onOpenSubject }) {
+function Assessment({ assessment, onOpenSubject, onOpenResults }) {
   function handleOpenSubject() {
-    const { assets } = assessment;
-    const primaryAsset = assets.find((asset) => asset.role === assetEnums.roles.PRIMARY);
-    onOpenSubject({ url: primaryAsset.url });
+    onOpenSubject({ url: entitiesUtils.getPrimaryAssetUrl(assessment) });
+  }
+
+  function handleOpenResults() {
+    onOpenResults({ assessmentId: assessment.id });
   }
 
   return (
@@ -92,9 +94,15 @@ function Assessment({ assessment, onOpenSubject }) {
       </Box>
       <Stack flex={1} spacing={0}>
         <Flex justifyContent='space-between' padding={3}>
-          <Stack spacing={0}>
+          <Stack spacing={1}>
             <Heading fontSize='1.75rem'>{assessment.group.code}</Heading>
             <Text fontSize='xl'>{assessment.title}</Text>
+            <Stack direction='row' fontSize='1rem'>
+              <Text color='gray.500'>Ajoutée le</Text>
+              <Text fontWeight='medium'>{new Date(assessment.createdAt).toLocaleDateString()}</Text>
+              <Text color='gray.500'>à</Text>
+              <Text fontWeight='medium'>{new Date(assessment.createdAt).toLocaleTimeString()}</Text>
+            </Stack>
             <Stack direction='row' alignItems='center' paddingTop={4}>
               <Avatar size='sm' name={entitiesUtils.getFullName(assessment.teacher)} />
               <Stack spacing={0}>
@@ -144,13 +152,10 @@ function Assessment({ assessment, onOpenSubject }) {
           </Tooltip>
 
           <Button
-            as='a'
             leftIcon={<Icon as={RiFileList3Fill} />}
-            target='_blank'
-            rel='noopener noreferrer'
             colorScheme='purple'
             variant='outline'
-            href='https://chakra-ui.com'
+            onClick={handleOpenResults}
           >
             Voir les rendus
           </Button>
@@ -162,7 +167,8 @@ function Assessment({ assessment, onOpenSubject }) {
 
 Assessment.propTypes = {
   assessment: assessmentPropType,
-  onOpenSubject: PropTypes.func.isRequired
+  onOpenSubject: PropTypes.func.isRequired,
+  onOpenResults: PropTypes.func.isRequired
 };
 
 export default Assessment;
